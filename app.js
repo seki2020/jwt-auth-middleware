@@ -3,6 +3,7 @@ require("./config/database").connect();
 const express = require("express");
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken')
+const auth = require('./middleware/auth.js')
 
 const app = express();
 
@@ -60,6 +61,11 @@ app.post("/register", async (req, res) => {
         console.log(err);
     }
     // Our register logic ends here
+});
+
+// try auth middleware
+app.post("/welcome", auth, (req, res) => {
+    res.status(200).send("Welcome 🙌 ");
 });
 
 
