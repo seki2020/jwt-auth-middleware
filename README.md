@@ -1,9 +1,9 @@
 add `.env` with your own settings.  
 example:
 ```.env
-API_PORT=4001
-
-MONGO_URI= //Your database URI here
+API_PORT = 4001
+MONGO_URI = 'mongodb://localhost:27017'
+TOKEN_KEY = abc123
 ```
 
 reference:
